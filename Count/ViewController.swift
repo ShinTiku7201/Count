@@ -207,7 +207,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func snsPhoto() {
-        let shareText = "現在の所持金は（所持金を入力！）だよ〜　         このまま頑張ろ＾_＾"
+        let shareText = "現在の所持金は\(number)円だよ〜 このまま頑張ろ＾_＾"
         //let shareImage = cameraImageView.image
         
         let activityItems: [Any] = [shareText]
@@ -223,12 +223,13 @@ class ViewController: UIViewController {
         if (popover != nil)   {
             popover!.sourceView = self.view
             popover!.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+
         }
     }
     @IBAction func shareOnTwitter() {
         
         //シェアするテキストを作成
-        let text = "現在の所持金は（所持金を入力！）だよ〜 このまま頑張ろ＾_＾"
+        let text = "現在の所持金は\(number)円だよ〜 このまま頑張ろ＾_＾"
         let hashTag = "#BeMoneyFriendly"
         let completedText = text + "\n" + hashTag
         
@@ -239,6 +240,8 @@ class ViewController: UIViewController {
         if let encodedText = encodedText,
            let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
             UIApplication.shared.open(url)
+            
+            super.viewDidLoad()
         }
         }
     
