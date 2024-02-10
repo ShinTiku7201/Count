@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var number: Int = 0
+    var saveDeta: UserDefaults = UserDefaults.standard
     
     @IBOutlet var Juice : UIButton!
     @IBOutlet var Tea :UIButton!
@@ -24,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet var Money500 :UIButton!
     @IBOutlet var Money100 :UIButton!
     @IBOutlet var Price :UILabel!
+    
     
     override func viewDidLoad() {
         Price.font = UIFont.init(name: "DBLCDTempBlack", size: 59.0)
@@ -52,11 +54,16 @@ class ViewController: UIViewController {
         Money500.clipsToBounds = true
         Money100.layer.cornerRadius = 30
         Money100.clipsToBounds = true
+        
+        number = saveDeta.object(forKey: "2525") as? Int ?? 0
+        Price.text = String(number)
+        print(number)
 
     }
     @IBAction func Juice2() {
         number = number - 150
         Price.text = String(number)
+        saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
             self.Juice.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -68,6 +75,7 @@ class ViewController: UIViewController {
     @IBAction func Tea2() {
         number = number - 130
         Price.text = String(number)
+        saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
             self.Tea.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -79,6 +87,7 @@ class ViewController: UIViewController {
     @IBAction func Water2() {
         number = number - 100
         Price.text = String(number)
+        saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
             self.Water.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -90,6 +99,7 @@ class ViewController: UIViewController {
     @IBAction func Coffee2() {
         number = number - 190
         Price.text = String(number)
+        saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
             self.Coffee.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -101,6 +111,7 @@ class ViewController: UIViewController {
     @IBAction func Hamburger2() {
         number = number - 500
         Price.text = String(number)
+        saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
             self.Hamburger.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -112,6 +123,7 @@ class ViewController: UIViewController {
     @IBAction func Potato2() {
         number = number - 320
         Price.text = String(number)
+        saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
             self.Potato.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -123,6 +135,7 @@ class ViewController: UIViewController {
     @IBAction func Rise2() {
         number = number - 400
         Price.text = String(number)
+        saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
             self.Rise.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -134,6 +147,7 @@ class ViewController: UIViewController {
     @IBAction func Fish2() {
         number = number - 600
         Price.text = String(number)
+        saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
             self.Fish.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -145,6 +159,7 @@ class ViewController: UIViewController {
     @IBAction func Money1000002() {
         number = number + 100000
         Price.text = String(number)
+        saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
             self.Fish.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -156,6 +171,7 @@ class ViewController: UIViewController {
     @IBAction func Money10002() {
         number = number + 1000
         Price.text = String(number)
+        saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
             self.Fish.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -167,6 +183,7 @@ class ViewController: UIViewController {
     @IBAction func Money5002() {
         number = number + 500
         Price.text = String(number)
+        saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
             self.Fish.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -178,6 +195,7 @@ class ViewController: UIViewController {
     @IBAction func Money1002() {
         number = number + 100
         Price.text = String(number)
+        saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
             self.Fish.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -189,7 +207,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func snsPhoto() {
-        var shareText = "現在の所持金は（所持金を入力！）だよ〜　         このまま頑張ろ＾_＾"
+        let shareText = "現在の所持金は（所持金を入力！）だよ〜　         このまま頑張ろ＾_＾"
         //let shareImage = cameraImageView.image
         
         let activityItems: [Any] = [shareText]
@@ -210,7 +228,7 @@ class ViewController: UIViewController {
     @IBAction func shareOnTwitter() {
         
         //シェアするテキストを作成
-        let text = "現在の所持金は（所持金を入力！）だよ〜　         このまま頑張ろ＾_＾"
+        let text = "現在の所持金は（所持金を入力！）だよ〜 このまま頑張ろ＾_＾"
         let hashTag = "#アプリ名"
         let completedText = text + "\n" + hashTag
         
@@ -222,8 +240,6 @@ class ViewController: UIViewController {
            let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
             UIApplication.shared.open(url)
         }
-        var saveDeta: UserDefaults = UserDefaults.standard
-        saveDeta.set("number", forKey: "zanndaka")
         }
     
 
