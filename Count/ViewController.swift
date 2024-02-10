@@ -229,7 +229,7 @@ class ViewController: UIViewController {
         
         //シェアするテキストを作成
         let text = "現在の所持金は（所持金を入力！）だよ〜 このまま頑張ろ＾_＾"
-        let hashTag = "#Be Money Friendly"
+        let hashTag = "#BeMoneyFriendly"
         let completedText = text + "\n" + hashTag
         
         //作成したテキストをエンコード
