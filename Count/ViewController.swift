@@ -161,10 +161,10 @@ class ViewController: UIViewController {
         Price.text = String(number)
         saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
-            self.Fish.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            self.Money100000.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
             UIView.animate(withDuration: 0.1) {
-                self.Fish.transform = CGAffineTransform.identity
+                self.Money100000.transform = CGAffineTransform.identity
             }
             
         }}
@@ -173,10 +173,10 @@ class ViewController: UIViewController {
         Price.text = String(number)
         saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
-            self.Fish.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            self.Money1000.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
             UIView.animate(withDuration: 0.1) {
-                self.Fish.transform = CGAffineTransform.identity
+                self.Money1000.transform = CGAffineTransform.identity
             }
             
         }}
@@ -185,10 +185,10 @@ class ViewController: UIViewController {
         Price.text = String(number)
         saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
-            self.Fish.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            self.Money500.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
             UIView.animate(withDuration: 0.1) {
-                self.Fish.transform = CGAffineTransform.identity
+                self.Money500.transform = CGAffineTransform.identity
             }
             
         }}
@@ -197,10 +197,10 @@ class ViewController: UIViewController {
         Price.text = String(number)
         saveDeta.set(number, forKey: "2525")
         UIView.animate(withDuration: 0.1, animations: {
-            self.Fish.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            self.Money100.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
             UIView.animate(withDuration: 0.1) {
-                self.Fish.transform = CGAffineTransform.identity
+                self.Money100.transform = CGAffineTransform.identity
             }
             
         }}
@@ -229,7 +229,7 @@ class ViewController: UIViewController {
         
         //シェアするテキストを作成
         let text = "現在の所持金は（所持金を入力！）だよ〜 このまま頑張ろ＾_＾"
-        let hashTag = "#アプリ名"
+        let hashTag = "#Be Money Friendly"
         let completedText = text + "\n" + hashTag
         
         //作成したテキストをエンコード
